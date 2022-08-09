@@ -1,11 +1,12 @@
 from json import load, loads, dump
 from requests import get, exceptions
 from pprint import pprint
+from os import environ.get as envget
 
 #region generics
 def mt_all_items(t):
     response = get(
-        url="http://192.168.0.201:7481/api/items",
+        url=environ.get(),
         params={
             "token": "AdHkIF_Cx75LmDC-4lGmHaGJRletpl",
             "mediaType": t
