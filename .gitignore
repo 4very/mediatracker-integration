@@ -1,5 +1,5 @@
 **/*
 !.gitignore
-!import.py
+!import.go
 !trackt-import
 !readme.md
