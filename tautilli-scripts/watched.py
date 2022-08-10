@@ -1,8 +1,9 @@
 from argparse import ArgumentParser, Namespace
 from requests import Response
+from os.path import join, dirname, abspath
 import sys  # added!
 
-sys.path.append("..")  # added!
+sys.path.append(join(dirname(abspath(__file__)),'..'))  # added!
 
 from lib.MediaTracker import MovieId, MovieSeenNow, ShowSeenNow, details, TvId
 
@@ -66,11 +67,9 @@ if __name__ == "__main__":
     parser.add_argument("--tvmaze_id", type=int)
 
     opts: dict = vars(parser.parse_args())
-    print(opts['media_type'])
 
     if opts['media_type'] == 'show':
-      AddTvWatched(**opts)
+      print(AddTvWatched(**opts))
     if opts['media_type'] == 'movie':
-      AddTvWatched(**opts)
+      print(AddTvWatched(**opts))
     
-    # AddMovieWatched(**opts)
