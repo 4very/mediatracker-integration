@@ -1,5 +1,7 @@
 **/*
 !.gitignore
-!import.go
+!*_import.py
 !trackt-import
 !readme.md
+!lib
+!MediaTracker.py
