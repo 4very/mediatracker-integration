@@ -88,6 +88,10 @@ def MovieSeen(mtid, date) -> Response:
         "/api/seen", {"mediaItemId": mtid, "lastSeenAt": "custom_date", "date": date}
     )
 
+def MovieSeenNow(mtid) -> Response:
+    return __basePut(
+        "/api/seen", {"mediaItemId": mtid, "lastSeenAt": "now"}
+    )
 
 def ShowSeen(mtid, date, seasonNum, epNum) -> Response:
     return __basePut(
@@ -101,6 +105,17 @@ def ShowSeen(mtid, date, seasonNum, epNum) -> Response:
         },
     )
 
+
+def ShowSeenNow(mtid, seasonNum, epNum) -> Response:
+    return __basePut(
+        "/api/seen",
+        {
+            "mediaItemId": mtid,
+            "lastSeenAt": "now",
+            "seasonId": seasonNum,
+            "episodeId": epNum,
+        },
+    )
 
 if __name__ == "__main__":
     with open("example.json", "w") as f:
